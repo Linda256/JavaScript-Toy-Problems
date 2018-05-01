@@ -16,8 +16,29 @@
 * rockPaperScissors(5); // => [['rock', 'rock', 'rock', 'rock', 'rock'], etc...]
 *
 */
+var input = ["paper", "rock", "scissors"];
 
-var rockPaperScissors = function (
-) {
-  // TODO: your solution here
+var rockPaperScissors = function(){
+  // start loop from input[1]
+    // loop from input
+        // loop through input
+  var result = [];
+  for(var i= 0; i<input.length; i++){
+    var output = [];
+    var first = input[i];
+    output[0]= first;
+      for (var j= 0; j<input.length; j++){
+        var second = input[j];
+        output[1]=second;
+          for (var k= 0; k<input.length; k++){
+            var third = input[j];
+            output[2]=third;
+          }
+          result.push(output);
+      }
+
+  }
+  return result;
 };
+
+console.log(rockPaperScissors());
