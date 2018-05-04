@@ -24,9 +24,24 @@ var primeTester = function(n) {
  */
 
 var primeSieve = function (start, end) {
+  var result = [];
+  if (typeof start !== 'number' || start > end ||typeof end !== 'number' ) {
+    // n isn't a number or n is less than 1 or n is not an integer
+    return result;
+  }
+  for (var n=start;n<=end;n++){
+    if (primeTester(n)){
+      result.push(n);
+    }
+  }
+  return result;
 };
 
 
 //var result = primeTester(5);
 var result = primeTester(0);
+console.log(result);
+var result = primeSieve(1,6);
+console.log(result);
+var result = primeSieve(-8,-1);
 console.log(result);
