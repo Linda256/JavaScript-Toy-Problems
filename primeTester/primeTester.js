@@ -39,9 +39,13 @@ var primeSieve = function (start, end) {
 
 
 //var result = primeTester(5);
-var result = primeTester(0);
-console.log(result);
-var result = primeSieve(1,6);
-console.log(result);
-var result = primeSieve(-8,-1);
-console.log(result);
+// var result = primeTester(0);
+// console.log(result);
+// var result = primeSieve(1,6);
+// console.log(result);
+// var result = primeSieve(-8,-1);
+// console.log(result);
+// var result = primeSieve(1,1000);
+// console.log(result);
+// var result = primeSieve('a',1000);
+// console.log(result);
