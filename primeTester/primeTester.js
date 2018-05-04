@@ -25,9 +25,12 @@ var primeTester = function(n) {
 
 var primeSieve = function (start, end) {
   var result = [];
-  if (typeof start !== 'number' || start > end ||typeof end !== 'number' ) {
+  if (typeof start !== 'number' || start > end ||typeof end !== 'number' || end<0) {
     // n isn't a number or n is less than 1 or n is not an integer
     return result;
+  }
+  if (start <0 ){
+    start = 2;
   }
   for (var n=start;n<=end;n++){
     if (primeTester(n)){
@@ -48,4 +51,6 @@ var primeSieve = function (start, end) {
 // var result = primeSieve(1,1000);
 // console.log(result);
 // var result = primeSieve('a',1000);
+// console.log(result);
+// var result = primeSieve(-200000,1000);
 // console.log(result);
