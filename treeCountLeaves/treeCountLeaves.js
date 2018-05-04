@@ -46,14 +46,12 @@ Tree.prototype.addChild = function(){
 Tree.prototype.countLeaves = function () {
   var count = 0 ;
   function countL(currTree){
-    if (!currTree.child){
+    if (currTree.children.length === 0 ){
       count++;
-      return;
     }
-    if (currTree.child){
-      for (var i=0; i<currTree.child.length;i++){
-        currTree=currTree.child[i]
-        countL(currTree);
+    else {
+      for (var i=0; i<currTree.children.length;i++){
+        countL(currTree.children[i]);
       }
     }
 
