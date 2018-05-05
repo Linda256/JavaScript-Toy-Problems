@@ -5,7 +5,7 @@
  */
 
 var primeTester = function(n) {
-  if (typeof n !== 'number' || n < 1 || n % 1 !== 0) {
+  if (typeof n !== 'number' || typeof n === 'NaN' || n <= 1 || n % 1 !== 0 ) {
     // n isn't a number or n is less than 1 or n is not an integer
     return false;
   }
@@ -44,7 +44,11 @@ var primeSieve = function (start, end) {
 
 
 //var result = primeTester(5);
- var result = primeTester(2);
+var n=15485867 * 15485867;
+console.log(n);
+var result = primeTester(n);
+ //var result = primeTester(15485867 * 15485867);
+
 console.log(result);
 // var result = primeSieve(1,6);
 // console.log(result);
@@ -55,5 +59,5 @@ console.log(result);
 // var result = primeSieve('a',1000);
 // console.log(result);
 //var result = primeSieve(-200000,1000);
-var result = primeSieve(20,22);
+var result = primeSieve(1,2);
 console.log(result);
