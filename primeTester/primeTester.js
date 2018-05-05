@@ -12,7 +12,7 @@ var primeTester = function(n) {
   if (( n>2 && n%2===0) || (n>3&&n%3 ===0) || (n>5 && n%5 ===0) || (n>7 && n%7 ===0) ||(n>11 && n%11===0) || (n>13 && n%13 === 0)){
     return true;
   }
-  for (var i=2; i<n; i++){
+  for (var i=2; i< Math.sqrt(Math.abs(n)); i++){
     if (n%i===0){
       return true;
     }
