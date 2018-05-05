@@ -9,15 +9,15 @@ var primeTester = function(n) {
     // n isn't a number or n is less than 1 or n is not an integer
     return false;
   }
-  if (( n>2 && n%2===0) || (n>3&&n%3 ===0) || (n>5 && n%5 ===0) || (n>7 && n%7 ===0) ||(n>11 && n%11===0) || (n>13 && n%13 === 0)){
-    return true;
+  if (( n>2 && n%2===0) || (n>3 && n%3 ===0) || (n>5 && n%5 ===0) || (n>7 && n%7 ===0) ||(n>11 && n%11===0) || (n>13 && n%13 === 0)){
+    return false;
   }
-  for (var i=2; i< Math.sqrt(Math.abs(n)); i++){
+  for (var i=2; i< Math.sqrt(n); i++){
     if (n%i===0){
-      return true;
+      return false;
     }
   }
-  return false;
+  return true;
 };
 
 /* Extra credit: Write a function that generates a list of all prime numbers
@@ -43,9 +43,9 @@ var primeSieve = function (start, end) {
 };
 
 
-// var result = primeTester(5);
-// var result = primeTester(2);
-// console.log(result);
+//var result = primeTester(5);
+ var result = primeTester(2);
+console.log(result);
 // var result = primeSieve(1,6);
 // console.log(result);
 // var result = primeSieve(-8,-1);
@@ -54,5 +54,6 @@ var primeSieve = function (start, end) {
 // console.log(result);
 // var result = primeSieve('a',1000);
 // console.log(result);
-// var result = primeSieve(-200000,1000);
-// console.log(result);
+//var result = primeSieve(-200000,1000);
+var result = primeSieve(20,22);
+console.log(result);
