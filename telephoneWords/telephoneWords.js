@@ -43,4 +43,28 @@ var phoneDigitsToLetters = {
 
 var telephoneWords = function(digitString) {
   // TODO: return every combination that can be spelled on a phone with these digits
+  // initiate a result []
+   //create recursion to get the combination of letter
+   // return result;
+
+
+  var result = [];
+
+  var letterCombination = function (word, digits) {
+    // base case: if no digits left, push word to results
+    if (digits.length === 0) {
+      return result.push(word);
+    }
+    phoneDigitsToLetters[digits[0]].split('')
+      .forEach(function(letter) {
+        letterCombination(word + letter, digits.slice(1));
+      });
+  };
+  // invoke recursive function
+  letterCombination('', digitString.split(''));
+  // return results array
+  return result;
 };
+
+var result = telephoneWords('232');
+console.log(result);
