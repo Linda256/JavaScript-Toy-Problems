@@ -54,5 +54,50 @@ var numbersToPlace = {
 };
 
 Number.prototype.toEnglish = function () {
-  // return my value as english words
-};
+  // convert number to string s
+  // split s to strArr
+  // len = strArr.length
+  // result = [];
+  // loop through strArr.
+        // var place for strrArr[i] = len - i
+        // var timesTen =1;
+        //conver the strrArr[i] to number n;
+        // if (place > 1)
+           // for (var i =0; i<place; i++){
+                 // timesTen = timesTen
+            //}
+          // if (n === 0) currStr = '';
+           // else currStr = numbersToWords[s]+ ' ' + numbersToPlace[timesTen]
+          //result.push(currStr);
+   // return result.join(' ');
+    var n = this.valueof();
+    console.log(this);
+    var s = n.toString();
+    var strArr = s.split('');
+    var result = [];
+    for (var i=0;i<strArr.length;i++){
+       var place  = strArr.length - i
+       var timesTen =1;
+       var currStr = '';
+       var n = Number(strArr[i])
+        if (place === 1) {
+          currStr = numbersToWords[s];
+        }
+        else{
+           for (var i =0; i<place; i++){
+                 timesTen = timesTen
+            }
+          if (n === 0) {
+            currStr = '';
+          } else {
+            currStr = numbersToWords[s]+ ' ' + numbersToPlace[timesTen];
+            console.log(currStr);
+          }
+          result.push(currStr);
+        }
+    }
+  return result.join(' ');
+}
+
+var result =  (781).toEnglish();
+console.log(result);

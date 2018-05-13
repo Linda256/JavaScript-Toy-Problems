@@ -11,69 +11,7 @@
 
 // Solved in O(n) time with O(1) memory
 
-// var sumArray = function(array) {
-// var prevsum=0
-// var maxsum=0
-//   // loop through the array
-//   //   currsum = prevsum + array[i]
-//   //   if currsum >= prevsum
-//   //     prevsum = currsum
-//   //   else{
-//   //     if (prevsum>maxsum) {
-//   //         maxsum=prevsum
-//   //        }
-//   //     prevsum=0
-//   //   }
-//   let currsum
-//   for (let i=0;i<array.length;i++){
-//     currsum = prevsum + array[i];
-//     //prevsum = currsum
-//     if (currsum >= maxsum){
-//         maxsum=currsum;
-//         prevsum=currsum;
-//     }
-//     else{
-//       if (prevsum>maxsum && array[i+1]>array[i]) {
-//           maxsum=prevsum
-//          }
-//       prevsum=0
-//     }
-//   }
-// return maxsum
-// };
 
-// var sumArray = function(array) {
-// var prevsum=0
-// var maxsum=0
-//   // loop through the array
-//   //   currsum = prevsum + array[i]
-//   //   if currsum >= prevsum
-//   //     prevsum = currsum
-//   //   else{
-//   //     if (prevsum>maxsum) {
-//   //         maxsum=prevsum
-//   //        }
-//   //     prevsum=0
-//   //   }
-//   let currsum
-//   for (let i=0;i<array.length;i++){
-//     currsum = prevsum + array[i];
-//     //prevsum = currsum
-//     if ((array[i]<0 && array[i+1] >= array[i])|| array[i]>0){
-//         prevsum=currsum;
-//     }
-//     if (maxsum<currsum){
-//         maxsum=currsum;
-//     }
-//     else{
-//       // if (prevsum>maxsum && array[i+1]>array[i]) {
-//       //     maxsum=prevsum
-//       //    }
-//       prevsum=0
-//     }
-//   }
-// return maxsum
-// };
 
 var sumArray = function(array) {
 

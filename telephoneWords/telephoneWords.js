@@ -66,5 +66,5 @@ var telephoneWords = function(digitString) {
   return result;
 };
 
-var result = telephoneWords('232');
+var result = telephoneWords('567');
 console.log(result);

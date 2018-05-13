@@ -58,4 +58,20 @@ var rockPaperScissors = function(){
   return output;
 }
 
+var rockPaperScissors = function(n){
+  var output = [];
+  for (var i=0;i<input.length;i++){
+    for (var j=0;j<input.length;j++){
+      for (var k=0;k<input.length;k++){
+        var result=[];
+        result[0] = input[i];
+        result[1] = input[j];
+        result[2]=input[k];
+        output.push(result);
+      }
+    }
+  }
+  return output;
+}
+
 console.log(rockPaperScissors());
