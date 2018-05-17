@@ -24,8 +24,55 @@ makeChange(1) === 1
 makeChange(2) === 2
 */
 
-var makeChange = function(total) {
+// var makeChange = function(total) {
+//   var ways = 0;
+//   if (total <= 0) return ways;
+//   //var pound = [1,2,5,10,20,50,100,200].sort((a-b) => a<b);
+//   var pounds = [200,100,50,20,10,5,2,1];
+//   // use recursion function calWays(ways,pounds,currTotal)to calculate ways
+//   function calWays(ways,pounds,currTotal){
+//     var sum = 0;
+//     // base case
+//     if (sum === currTotal){
+//          return ways++;
+//        }
+//     //loop through pounds
+//     for (var i=0;i<pounds.length;i++){
+//       var k = currTotal/pounds[i];
+//       if (k===0){
+//          ways ++;
+//          calWays(ways,pounds.slice(1),currTotal);
+//       } else {
+//         for (j=1;j<=k;j++ ){
+//               currTotal= currTotal - pounds[i]*j;
+//               calWays(ways,pounds.slice(1),currTotal);
+//         }
+//       }
+//     }
+//   }
+//   calWays(ways,pounds,total);
+//   return ways;
+// };
 
+var makeChange = function(total) {
+  var ways = 0;
+  if (total <= 0) return ways;
+  var pounds = [1,2,5,10,20,50,100,200]
+  // use recursion function calWays(ways,pounds,currTotal)to calculate ways
+  function calWays(index,currTotal){
+    var currPound =  pounds[index];
+    // base case
+    if (index === 0 && currTotal % currPound === 0){
+         return ways++;
+       }
+    while (currTotal >= 0){
+      calWays(index-1,currTotal);
+      currTotal -= currPound;
+    }
+  }
+  calWays(pounds.length-1,total);
+  return ways;
 };
 
-
+var result =makeChange(200);
+console.log(result);
