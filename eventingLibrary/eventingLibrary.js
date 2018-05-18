@@ -21,6 +21,59 @@
  */
 
 var mixEvents = function(obj) {
+//   // TODO: Your code here
+//   on : function(change, function(){
+//     {
+//       // get the key from change
+//       // pass key to callback function
+//       // var ready =  function(){
+//         // console.log(`{key} changed`) }
+//       for (k in obj){
+//         if (change === `{obj[k]}+Change`){
+//         trigger(`{obj[k]}+Change`);
+//       }
+
+//       }
+//     }
+
+//   },
+//   trigger: function(triggerChange){
+//     // get the key from triggerChange;
+//     // ready()
+//     if (changeTriggered = ageChange)
+
+//   }
+//   return obj;
+// };
   // TODO: Your code here
+  var tempObj = {};
+  tempObj.memo = {};
+
+  tempObj.on = function(trigger, callback) {
+    var index = trigger;
+    obj.memo[index] = callback;
+  };
+
+  tempObj.trigger = function() {
+    var args = Array.from(arguments);
+    args.forEach(function(triggerPhrase) {
+      if (obj.memo[triggerPhrase]) {
+        obj.memo[triggerPhrase]();
+      }
+    });
+  };
+
+  var test = Object.create(tempObj);
+  obj = Object.assign(test, obj);
+
   return obj;
 };
+
+var obj = mixEvents({ name: 'Alice', age: 30 });
+obj.on('ageChange', function(){ console.log('Age changed') } );
+obj.age++;
+obj.on('nameChage', function(){ console.log('Name changed') })
+obj.name = 'Mary';
+obj.trigger('ageChange');
+obj.trigger('nameChange');
+console.log(obj);
