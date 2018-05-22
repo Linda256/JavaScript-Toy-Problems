@@ -20,26 +20,78 @@ var getIndexBelowMaxForKey = function(str, max) {
   return hash % max;
 };
 
+
+
 var makeHashTable = function() {
   var result = {};
   var storage = [];
   var storageLimit = 4;
   var size = 0;
-  
-  result.insert = function(/*...*/ 
-) {
+
+  var resize = function(storage){
+    if (size > 0.75*storageLimit){
+      storageLimit = storageLimit*2;
+    }
+    if (size < 0.25*storageLimit){
+      storageLimit = Math.floor(storageLimit*0.5);
+    }
+  }
+
+  result.insert = function(k, v) {
     // TODO: implement `insert`
+    var index = getIndexBelowMaxForKey(k, storageLimit);
+    var bucket = storage.get(index) || [];
+
+    for (var i = 0; i < bucket.length; i++) {
+    var tuple = bucket[i];
+    if (tuple[0] === k) {
+      var oldValue = tuple[1];
+      tuple[1] = v;
+      return oldValue;
+    }
+
+    bucket.push([k,v]);
+    storage.push(index,bucket);
+    size++;
+    resize(storage);
+    return undefined;
+    }
   };
 
-  result.retrieve = function(/*...*/ 
-) {
+  result.retrieve = function(key) {
     // TODO: implement `retrieve`
+  var index = getIndexBelowMaxForKey(k, this._limit);
+
+  var bucket = this._storage.get(index) || [];
+
+  for (var i = 0; i < bucket.length; i++) {
+    var tuple = bucket[i];
+    if (tuple[0] === k) {
+      return tuple[1];
+    }
+   }
+  return undefined;
   };
 
-  result.remove = function(/*...*/ 
-) {
+  result.remove = function(key) {
     // TODO: implement `remove`
-  };
 
-  return result;
+  var index = getIndexBelowMaxForKey(k, storageLimit);
+
+  var bucket = storage.get(index) || [];
+
+  for (var i = 0; i < bucket.length; i++) {
+    var tuple = bucket[i];
+    if (tuple[0] === k) {
+      bucket.splice(i, 1);
+      this._size--;
+      resize(storage);
+      }
+      return tuple[1];
+    }
+  }
+  return undefined;
 };
+
+var result = makeHashTable.insert('cat','lulu');
+console.log(result);

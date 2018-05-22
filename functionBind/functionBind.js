@@ -22,9 +22,11 @@
  * result === 'foobar'; // true
  *
 */
-
-var bind = function(
+//my note:
+// need pass mutiple undefined type parameters arguments?
+var bind = function(func, obj
 ) {
+   var val =
   // TODO: Your code here
 };
 
@@ -55,5 +57,8 @@ var bind = function(
 
 Function.prototype.bind = function(
 ) {
+  var func = this;
+  //console.log('the value of this');
+  //console.log(this);
   // TODO: Your code here
 };
