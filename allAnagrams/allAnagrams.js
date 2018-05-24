@@ -13,5 +13,29 @@
   */
 
 var allAnagrams = function(string) {
-  // Your code here.
+
+  function findAnagrams(start, strRemainder) {
+    if (strRemainder.length === 1) {
+      return [start + strRemainder];
+    } else {
+      let results = [];
+      for (let i = 0; i < strRemainder.length; i++) {
+        console.log(strRemainder[i]);
+        let anagram = findAnagrams(strRemainder[i], strRemainder.substr(0, i) + strRemainder.substr(i + 1));
+        console.log(strRemainder[i] +' ' + 'anagram: ' +  anagram);
+        for (let j = 0; j < anagram.length; j++) {
+          results.push(start + anagram[j]);
+        }
+      }
+
+      return results;
+    }
+  }
+
+  return findAnagrams('', string);
+
+
 };
+
+// var anagrams = allAnagrams('abc');
+// console.log(anagrams);
