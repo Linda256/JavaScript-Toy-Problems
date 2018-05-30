@@ -34,6 +34,16 @@ var divide = function(x, y) {
     a=a-b;
     result++;
   }
+  if (a>0){
+    // calculate 3 digit
+    let digit=0;
+    a = a*1000
+    while (a>=b){
+    a=a-b;
+    digit++;
+    }
+    result = result + digit/1000;
+  }
   if ((x<0 && y>0) || (x>0 && y<0)){
     result = - result;
   }
@@ -42,10 +52,20 @@ var divide = function(x, y) {
 
 var modulo = function(x, y) {
   // TODO: should return the remainder of x / y
+  if (y===0) return undefined;
+  let a = Math.abs(x);
+  let b = Math.abs(y);
+  while (a>=b){
+    a=a-b;
+  }
+  return a;
 };
 
 let m = multiply(-5,2);
 console.log(m);
 
-let d = divide(-15,0);
+let d = divide(14,3);
 console.log(d);
+
+let r = modulo(14,2);
+console.log(r);
