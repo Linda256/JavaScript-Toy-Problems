@@ -1,5 +1,5 @@
 /**
- * Write a stack using your preferred instantiation pattern. 
+ * Write a stack using your preferred instantiation pattern.
  * Avoid using native array methods i.e., push, pop, and length.
  * Once you're done, implement a queue using two stacks.
  */
@@ -7,18 +7,30 @@
 /**
   * Stack Class
   */
-var Stack = function() {
 
+class Stack
+  {
+   constructor(){
+    this.count=0;
+    this.storage={};
+   };
   // add an item to the top of the stack
-  this.push = function() {
+   push (value) {
+    this.storage[this.count]= value;
+    this.count++;
   };
 
   // remove an item from the top of the stack
-  this.pop = function() {
+   pop() {
+    if (this.count>0){
+      delete.this.storage[this.count-1];
+      this.count--;
+    }
   };
 
   // return the number of items in the stack
-  this.size = function() {
+   size() {
+    return this.count;
   };
 };
 
