@@ -25,7 +25,7 @@ var firstNonRepeatedCharacter = function(str) {
     let currChar = str[i];
     visited[currChar] === undefined ? visited[currChar] = 1 : visited[currChar] = visited[currChar]+1;
     }
-  for (k in visited){
+  for (var k in visited){
     if (visited[k]===1) return k;
   }
   return null;
@@ -33,5 +33,5 @@ var firstNonRepeatedCharacter = function(str) {
 
 //let result=firstNonRepeatedCharacter('ABA');
 //let result=firstNonRepeatedCharacter('AACBCDB');
-let result=firstNonRepeatedCharacter('AAAACXC');
-console.log(result);
+// let result=firstNonRepeatedCharacter('AAAACXC');
+// console.log(result);
