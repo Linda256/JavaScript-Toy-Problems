@@ -56,7 +56,7 @@ var nthFibonacci = function (n) {
   let arr = [0,1]
   let pre = arr[0];
   let curr = arr[1];
-  i = 1
+  let i = 1
   while (i<n-1) {
     curr=curr+pre
     arr.push(curr);
