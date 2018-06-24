@@ -26,13 +26,56 @@
 
 /*
  * Example usage:
- * bubbleSort([2, 1, 3]); // yields [1, 2, 3]
+ * c // yields [1, 2, 3]
  *
 */
 
 // Feel free to add helper functions if needed.
 
+/*
+O:arr
+I:arr,
+ 1. are the items in the arr same datatype? all numbers? strings? mix? objects?
+ 2. how to compare mix?
+C:
+E:[]?
 
-var bubbleSort = function(array) {
+
+assume items are comparable
+
+[6,8,2,1]
+start at
+    1s: [6,2,8,1] [6,2,1,8]
+    2nd:
+n = 0
+while (n< arr.length)
+    while (i < arr.length-1) compare arr[i], arr[i+1]
+       if (arr[i] > arr[i+1]) swap
+       else i++
+    n++;
+return arr;
+
+*/
+var bubbleSort = function(arr) {
   // Your code here.
+  let n = 0;
+  while (n< arr.length){
+    let i=0;
+    while (i < arr.length-1){
+       (arr[i] > arr[i+1])? swap(arr, i, i+1) : i++;
+    }
+    n++;
+  }
+return arr;
 };
+
+var swap = function (arr, i, j){
+  let temp = arr[i];
+  arr[i]= arr[j];
+  arr[j]=temp;
+}
+
+//let arr = [7,1,4,2];
+let arr = [6,2,1,8];
+let result = bubbleSort(arr);
+console.log(result);
