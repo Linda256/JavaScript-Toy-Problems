@@ -24,26 +24,46 @@ E:
 */
 
 
-var commonCharacters = function(a, b) {
+// var commonCharacters = function(a, b) {
+
+//   // TODO: Your code here!
+//   let arrCommon =[];
+//   let arrUniq = [];
+//   for (let i=0;i<a.length;i++){
+//     if (a[i]!==' ' && arrUniq.indexOf(a[i]) === -1){
+//       arrUniq.push(a[i]);
+//     }
+//   }
+
+//   for (let j=0;j<b.length;j++){
+//     if (arrUniq.indexOf(b[j]) !== -1 && arrCommon.indexOf(b[j]) === -1){
+//       arrCommon.push(b[j]);
+//     }
+//   }
+//   return arrCommon.join('');
+// };
+
+var commonCharacters = function(b, a) {
 
   // TODO: Your code here!
-  let arrCommon =[];
-  let arrUniq = [];
+  let strCommon ='';
+  let strUniq = '';
   for (let i=0;i<a.length;i++){
-    if (a[i]!==' ' && arrUniq.indexOf(a[i]) === -1){
-      arrUniq.push(a[i]);
+    if (a[i]!==' ' && strUniq.includes(a[i]) !== true){
+      strUniq=strUniq+a[i];
     }
   }
 
   for (let j=0;j<b.length;j++){
-    if (arrUniq.indexOf(b[j]) !== -1 && arrCommon.indexOf(b[j]) === -1){
-      arrCommon.push(b[j]);
+    if (strUniq.includes(b[j]) === true && strCommon.includes(b[j])!== true){
+      strCommon= strCommon + b[j];
     }
   }
-  return arrCommon.join('');
+  return strCommon
 };
 
-// let result = commonCharacters('acexi voua', 'aegihobua');
+//let result = commonCharacters('acexi voua', 'aegihobua');
+// let result = commonCharacters('bxyz', 'bbzxy');
 // console.log(result);
 
 
