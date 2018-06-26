@@ -9,9 +9,41 @@
  *
  * Extra credit: Extend your function to handle more than two input strings.
  */
+/*
+
+O: string (no duplication, no space, in order in a)
+I: 2 strings
+C:
+E:
 
 
+//loop through a, put the unique char into arr1
+  loop through b, if char is in arr1, add the char to string common
+  return common
 
-var commonCharacters = function(string1, string2) {
+*/
+
+
+var commonCharacters = function(a, b) {
+
   // TODO: Your code here!
+  let arrCommon =[];
+  let arrUniq = [];
+  for (let i=0;i<a.length;i++){
+    if (a[i]!==' ' && arrUniq.indexOf(a[i]) === -1){
+      arrUniq.push(a[i]);
+    }
+  }
+
+  for (let j=0;j<b.length;j++){
+    if (arrUniq.indexOf(b[j]) !== -1 && arrCommon.indexOf(b[j]) === -1){
+      arrCommon.push(b[j]);
+    }
+  }
+  return arrCommon.join('');
 };
+
+// let result = commonCharacters('acexi voua', 'aegihobua');
+// console.log(result);
+
+
