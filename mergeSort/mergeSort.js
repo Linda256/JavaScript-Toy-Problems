@@ -93,10 +93,120 @@
  *   the input not into sublists of length 1, but into whatever sublists are already sorted in the input.
  *   Implement natural splitting into your mergesort. How much does it improve your average-case runtime?
  *
+
+
+ I:array of numbers
+ O:array of numbers
+ C:log(n)
+ E:sorted array?
  */
 
 
 
-var mergeSort = function(array) {
+
   // Your code here.
+  /*iterative approach:
+ split the array into substay
+ arr=[[],[],[]]
+while (arr.length>1)
+     loop through the arr(let i=0;i<arr.length;i=i+2),
+         currArr = []
+         tempArr[]
+         tempArr=merge sort i, i+1
+         currArr.push(tempArr)
+     arr=currArr;
+     Array.prototype.slice.call
+  */
+var mergeSort = function(arr) {
+let arrP = [];
+// for (let i=0; i<arr.length;i++){
+//   console.log(arr[i]);
+//   let arrNum=[];
+//   arrNum.push(arr[i]);
+//   arrP.push(arrNum);
+
+// }
+arr.forEach((num) => {
+  let numArr=[];
+  numArr.push(num);
+  arrP.push(numArr)})
+console.log(arrP);
+
+while (arrP.length>1){
+  for (let k=0;k<arrP.length-1;k=k+2){
+    merge(arrP[k],arrP[k+1]);
+  }
+}
 };
+
+var merge = function(arr1,arr2){
+  let arrTemp = [];
+  let i=0;
+  let j=0;
+  while (i<arr1.length && j< arr2.length){
+    if (arr1[i] > arr2[j]) {
+      arrTemp.push(arr2[j]);
+      j++;
+    } else {
+      arrTemp.push(arr1[i]);
+      i++;
+    }
+  }
+  return arrTemp.concat(arr1.slice(i).concat(arr2.slice(j)));
+}
+
+//recursion
+// var mergeSort = function(arr) {
+// let array =[];
+// array=arr;
+// let arrP = [];
+// for (let i=0; i<array.length;i++){
+//   console.log(array[i]);
+//   let arrNum=[];
+//   arrNum.push(array[i]);
+//   arrP.push(arrNum);
+
+// }
+// console.log(arrP);
+
+// };
+
+// function mergeSort (arr) {
+//   if (arr.length === 1) {
+//     // return once we hit an array with a single item
+//     return arr
+//   }
+
+//   const middle = Math.floor(arr.length / 2) // get the middle item of the array rounded down
+//   const left = arr.slice(0, middle) // items on the left side
+//   const right = arr.slice(middle) // items on the right side
+
+//   return merge(
+//     mergeSort(left),
+//     mergeSort(right)
+//   )
+// }
+
+// // compare the arrays item by item and return the concatenated result
+// function merge (left, right) {
+//   let result = []
+//   let indexLeft = 0
+//   let indexRight = 0
+
+//   while (indexLeft < left.length && indexRight < right.length) {
+//     if (left[indexLeft] < right[indexRight]) {
+//       result.push(left[indexLeft])
+//       indexLeft++
+//     } else {
+//       result.push(right[indexRight])
+//       indexRight++
+//     }
+//   }
+
+//   return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
+// }
+
+
+let array=[4, 7, 4, 3, 9, 1, 2];
+let result = mergeSort(array);
+console.log(result);

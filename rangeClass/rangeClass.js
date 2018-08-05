@@ -37,19 +37,58 @@
  * evenNumbers.size() should be 4
  * evenNumbers.includes(2) should be true, evenNumbers.includes(3) should be false
  */
-
+/*
+O: a class
+I: numbers: start, end, step
+C:
+E: if not start, return null
+   if step is null, default step =1
+   if step negative, backward
+   if start> end step backword
+*/
 
 var Range = function(start, end, step) {
+  this. start = start;
+  if (end === undefined){
+    this.end = start;
+  }
+
+  if(step === undefined){
+   this.step = (this.start > this.end) ? 1 : -1
+  } else {
+    this.step = step;
+  }
+
+  // this.start = start;
+  // this.end = end;
+  // this.step = step;
+  // this size =0;
+
+  // if (start === undefined) return  null;
+  // if (step===undefined) step=1;
+  // if (step<0 || start > end) {
+  //   let temp = start;
+  //   start = end;
+  //   end = temp;
+  // }
+
 };
 
 Range.prototype.size = function () {
+
+  return Math.floor(this.end - this.start)/this.step + 1;
 };
 
 Range.prototype.each = function (callback) {
+
+  for (var i=this.)
 };
 
 Range.prototype.includes = function (val) {
+
 };
 
-var range = new Range(1);
+//var range = new Range(1);
+var range = new Range();
+console.log(range);
 

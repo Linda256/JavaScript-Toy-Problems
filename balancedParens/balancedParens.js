@@ -30,6 +30,12 @@
  left = ['(','[','{']
  right=[')',']','}']
 
+ 'adb(()name)[]((gh)){}'
+
+ stack=[')']
+ stack.pop()=')'
+ stack.pop()=
+
 loop through the input
 if char in left i, push the right[i] into stack;
 else

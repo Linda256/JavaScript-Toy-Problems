@@ -48,7 +48,7 @@ var hasCycle = function(linkedList) {
     var currVal = currNode.value;
     // if visited include the node value, return true
     if (visited.includes(currVal)){
-      console.log(visited);
+      //console.log(visited);
       return true;
     }
     visited.push(currVal);
@@ -58,14 +58,14 @@ var hasCycle = function(linkedList) {
 
 };
 
- var nodeA = Node('A');
- var nodeB = nodeA.next = Node('B');
- var nodeC = nodeB.next = Node('C');
-var nodeD = nodeC.next = Node('D');
-var nodeE = nodeD.next = Node('E');
-nodeE.next = nodeB;
-var result = hasCycle(nodeA);
-console.log('nodeA value: ' + nodeA.value);
-console.log('NodeE');
-console.log(nodeE);
-console.log(result);
+//  var nodeA = Node('A');
+//  var nodeB = nodeA.next = Node('B');
+//  var nodeC = nodeB.next = Node('C');
+// var nodeD = nodeC.next = Node('D');
+// var nodeE = nodeD.next = Node('E');
+// nodeE.next = nodeB;
+// var result = hasCycle(nodeA);
+// console.log('nodeA value: ' + nodeA.value);
+// console.log('NodeE');
+// console.log(nodeE);
+// console.log(result);

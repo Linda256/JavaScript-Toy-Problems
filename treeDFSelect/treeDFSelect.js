@@ -36,6 +36,13 @@ var Tree = function(value) {
 };
 
 Tree.prototype.DFSelect = function(filter) {
+  var results =[];
+  var subrountine = function(node,depth){
+    if (filter(node.value,depth)){
+      results.push(node.value);
+    }
+    for (var i=0;i<node.children.l)
+  }
 };
 
 

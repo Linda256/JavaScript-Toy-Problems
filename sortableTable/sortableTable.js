@@ -8,8 +8,12 @@
  * Use the table provided in index.html.
  **/
 
-$(function () {
-  // TODO: your code here!
+// $(function () {
+//   // TODO: your code here!
 
+// });
+$('.food').sortable({
+  containment: 'parent',tolerance:'pointer',
+  cursor:'pointer',revert:true,opacity: 0.6;
 });
 

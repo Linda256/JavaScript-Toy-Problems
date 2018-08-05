@@ -57,6 +57,11 @@ Array.prototype.isSubsetOf = function (arr) {
    return true;
 };
 
+//help function
+// function objectify(arr){
+//   var obj ={}
+// }
+
 // let a = ['commit','push']
 // let result = a.isSubsetOf(['commit','rebase','push','blame'])
 // var b = ['merge','reset','beset']

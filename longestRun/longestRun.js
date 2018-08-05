@@ -14,6 +14,12 @@
  */
 
 var longestRun = function (string) {
+  let longest=1;
+  let
+ //loop through string
+ //put the char into an obj
+ //
+
   // TODO: Your code here!
 };
 

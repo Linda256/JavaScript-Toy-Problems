@@ -39,6 +39,41 @@ var Tree = function(value) {
 
 Tree.prototype.BFSelect = function(filter) {
   // return an array of values for which the function filter(value, depth) returns true
+  /*
+  result = [];
+  init dfArr = []
+  currNode=this
+  dfValArr(currNode.value)
+  currVal = dfVallArr.shift();
+  filter(currVal) if true result.push(currVal)
+
+  while (currNode.children != null)
+      put each child.value into the q.
+      currNode
+  */
+  // let result = [];
+  // let dfArr = [];
+  // let currNode=this
+  // dfArr.push(currNode)
+  // let currNode = dfVallArr.shift();
+  // if (filter(currNode)) result.push(currNode.value)
+  // while (currNode.children != null){
+  //   currNode.children.forEach(child){
+  //     dfArr.push(child);
+  //   }
+  //   if (dfVallArr.shift()!==null){
+  //      currNode = dfVallArr.shift();
+  //      if (filter(currNode.value)) result.push(currNode.value)
+  //   }
+  // }
+  // while
+  // return result;
+
+  let queue = new Queue();
+  let result = [];
+  let current;
+  queue.enque
+
 };
 
 /**

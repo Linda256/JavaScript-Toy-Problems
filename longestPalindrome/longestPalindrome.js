@@ -7,4 +7,19 @@
 */
 
 var longestPalindrome = function (string) {
+  var longestP = "";
+  //split the string into arr words
+  //For each word, check isPalindrom
+        // if true
+           // currlength = word[i].length
+           // if currlength>longestLen
+                   // longestLen = currlength
+                   // longestP = word[i];
+  return longestP;
 };
+
+var isPalindrom = function(word) {
+  for (var i=0;i<word.length; i++){
+    for (var j=word.length; )
+  }
+}

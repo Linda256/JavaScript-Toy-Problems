@@ -62,6 +62,11 @@ var commonCharacters = function(b, a) {
   return strCommon
 };
 
+
+// var str = str.split('');
+// var otherStr = Array.prototype.slice.call(arguments,1);
+//if (letter.match(/[a-z]/i)) i is for ignore cases.
+
 //let result = commonCharacters('acexi voua', 'aegihobua');
 // let result = commonCharacters('bxyz', 'bbzxy');
 // console.log(result);

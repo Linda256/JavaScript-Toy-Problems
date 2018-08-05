@@ -17,4 +17,11 @@
 var spiralTraversal = function(matrix) {
 
   // TODO: Implement me!
+
+  //print the first row (arr1)
+  //print the first col start with the last item of arr2
+  //print the last row start with the 2nd last item of arrLast
+  // print col1(first item of each arr) stop at the first item of arr2
+
+  //
 };

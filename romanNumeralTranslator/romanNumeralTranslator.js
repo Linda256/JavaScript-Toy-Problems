@@ -29,5 +29,8 @@ var DIGIT_VALUES = {
 
 var translateRomanNumeral = function(romanNumeral) {
 // TODO: Implement me!
+// loopthrough the romanNumeral to get digital value  currVal for each current char[i].
+//  compare currVal with next char val nextVal
+//  if currVal<
 
 };

@@ -27,7 +27,11 @@
  * ];
  * matrix[0][0]; // 1
  * matrix[3][2]; // 'F'
- *
+ * matrix[3][0] D
+ [2][0]9
+ [1][0]5
+
+
  * var rotatedMatrix = rotateMatrix(matrix); // Rotate 90 degrees clockwise
  * // rotatedMatrix is:
  * [ ['D',9,5,1],
@@ -42,8 +46,37 @@
  *  - Make your function operate on rectangular matrices (MxN rather than NxN).
  *  - Make your function accept a parameter for the direction of rotation (1 = clockwise, -1 = counterclockwise)
  */
+ /*
+ Input: Array,(number, char,)
+ Output: Array(rotated)
+ C: no
+ E: MXN, nested array
+
+loop through the array
+  put index 0 from last row to the first row to each column at row 0
+  put index 1 from last row to the second row to each column at  row 1
+  ...
+  put index n from last row to the first row to each column at row n
+ */
 
 var rotateMatrix = function(matrix
 ) {
-  // Your code here.
+  const rotated=[];
+  for (let k=0;k<matrx.length;k++){
+    let row=[];
+    rotated.push(row);
+  }
+  k=0
+  while (k<matrix.length){
+    for (let j=0;j<matrix.length;j++){
+      for (let i=matrix.length-1; i>=0; i--){
+       rotated[k][matrix.length-i-1]=matrix[i][j]
+      }
+      k++;
+    }
+  }
+
+
+
+
 };

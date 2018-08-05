@@ -10,7 +10,8 @@
 
 var largestProductOfThree = function(arr) {
   // TODO: everything
-  let arr1 = arr;
+  //let arr1 = arr;//arr is also changed, because arr1,arr feference the same thing. arr1=arr.slice();
+  let arr1 = arr.slice();
   let len = arr1.length;
   arr1.sort((a,b) => (b-a));
   let result =1 ;
@@ -22,8 +23,9 @@ var largestProductOfThree = function(arr) {
   return result;
 };
 
-let arr = [-1, -2, -3, -4, -5, -6];
-//let arr =[2, -1, 3, -7];
+//let arr = [-1, -2, -3, -4, -5, -6];
+let arr =[2, -1, 3, -7];
 let result = largestProductOfThree(arr);
 console.log(result);
+console.log(arr);
 

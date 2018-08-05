@@ -37,7 +37,54 @@
  *
  *
  */
+/*
+O: result of the callback function
+I: 1. Array of functions, 2. callback function
+C:O(n)
+E: ?
 
+loop through tasks,
+    for each task find the gcb,
+    put the parameters of the call back into result(using arguments library to find arguments)
+
+*/
 
 var asyncMap = function(tasks, callback) {
+
+  // let argsTasks = Array.prototype.slice.call(arguments[0]);
+  // //console.log(argsTasks[0]);
+  // let arg1=argsTasks[0];
+
+  // console.log(arg1);
+
+  //argsTasks.forEach(task => {console.log(arguments)})
+  let results =[];
+  let counter = 0
+
+  tasks.forEach(function(func, index) {
+    func(function(item) {
+      results[index] = item
+      counter++
+      if (counter === tasks.length) {
+        callback(results)
+      }
+    })
+  })
 };
+
+asyncMap([
+ function(cb){
+     setTimeout(function(){
+       cb('one');
+     }, 200);
+   },
+   function(cb){
+     setTimeout(function(){
+       cb('two');
+     }, 100);
+   }
+  ],
+   function(results){
+     console.log(results);
+  });
+

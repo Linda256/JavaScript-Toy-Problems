@@ -56,16 +56,29 @@ var nthFibonacci = function (n) {
   let arr = [0,1]
   let pre = arr[0];
   let curr = arr[1];
-  let i = 1
+  let i = 1;
   while (i<n-1) {
-    curr=curr+pre
+    curr=curr+pre;
     arr.push(curr);
-    i++
-    pre = arr[i-1]
-    curr = arr[i]
+    i++;
+    pre = arr[i-1];
+    curr = arr[i];
   }
   return curr+pre;
 };
+
+var nFib = function(n){
+  var mem = [];
+  for (var i=0; i<=n; i++){
+     mem[i]< 2 ? i: mem(n-1) + nFib(n-2);
+  }
+   return mem[n];
+
+}
+
+var nFib = function(n){
+  return n < 2 ? n: nFib(n-1) + nFib(n-2);
+}
 
 let result = nthFibonacci(6);
 console.log(result);
